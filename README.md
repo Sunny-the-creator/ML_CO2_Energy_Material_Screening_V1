@@ -1,46 +1,46 @@
-# ML-Based Screening of Sustainable Materials (Version 1)
+# ML-Based Multi-Criteria Screening of Sustainable Electrochemical Materials for CO₂ Conversion and Energy Storage
 
-This project applies machine learning to evaluate sustainable material candidates for **CO₂ conversion** and **electrochemical energy storage**.
+This repository contains machine learning workflows for screening sustainable materials for CO₂ conversion and energy storage.
 
-## Project Overview
+---
 
-I built a full ML pipeline using a curated dataset of 20 material systems with the goal of predicting:
+## Version Overview
 
-- **Faradaic Efficiency** (CO₂RR)
-- **Specific Capacitance** (Energy Storage)
-- **Material Cost Performance Index (MCPI)**
+### V1: Initial Prototype
+- Basic ML workflow for predicting `band_gap`
+- Small dataset (~30 samples)
+- Models: Linear Regression, Random Forest
+- Simple evaluation and basic visualization
 
-## Objectives
-- Use ML models (Linear Regression, Random Forest) to predict material performance
-- Introduce MCPI as a cost-efficiency metric
-- Apply SHAP for model interpretability
-- Lay the foundation for a scalable screening framework (Version 2)
+➡[View V1 Notebook](ML_CO2_Energy_Material_Screening_V1.ipynb)
 
-## Features Used
-- Bandgap Energy
-- Electrical Conductivity
-- Specific Surface Area
-- Stability Score
-- Synthesis Complexity
-- Raw Material Cost
+---
 
-## Results Summary
+### V2: Research-Grade Update
+- Scaled-up to 500+ materials from Materials Project
+- Features: volume, density, magnetization, stability ratio, etc.
+- Models: Linear Regression, Random Forest, XGBoost
+- Interpretation: SHAP, feature importance, visualizations
+- Dataset: `clean_materials_dataset_v2.csv`
 
-| Target | Best Model | R² | RMSE |
-|--------|------------|----|------|
-| Faradaic Efficiency | RF | ~0.30 | ~11 |
-| Specific Capacitance | RF | ~0.48 | ~5.1 |
-| MCPI | RF | ~0.48 | ~5.1 |
+➡[View V2 Notebook](V2/V2_bandgap_ML_CO2_Energy_Material_Screening_V2.ipynb)
 
-SHAP interpretation highlighted the most influential material descriptors for each target.
+---
 
-## Limitations
-- Small dataset (n=20) not suitable for generalization
-- Performance is limited by feature diversity and sample size
+## Goals
+- Screen materials with potential for CO₂RR and energy storage
+- Predict and interpret band gap behavior using ML
+- Build reproducible pipelines for academic research
 
-## Future Work (Version 2 Goals)
-- Use larger dataset (100–500+ materials) from Materials Project, NOMAD, or OpenCatalyst
-- Generalize pipeline using modular Python functions
-- Apply XGBoost, LightGBM, and hyperparameter tuning
-- Build a Streamlit tool for real-time screening
-- Publish results as a preprint or research blog post
+---
+
+## Next Steps
+- Extend modeling to other properties: `co2rr_overpotential`, `specific_capacitance`, `MCPI`
+- Improve feature engineering and model tuning
+- Add UI (Streamlit) or model deployment
+
+---
+
+## Author
+Sunny Eke
+
